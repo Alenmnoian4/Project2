@@ -16,5 +16,4 @@
 *  Exotic Motors APP will allow users to view, add, create, edit and delete vehicle inventory, along with being able to build their own vehicle.
 
 ## MOCKUP
-
-<div src=https://s3.us-east-1.amazonaws.com/user-assets.mediamodifier.com/templates/638fd3ff4beafa613f88b11a/638fd44c26ca84b5473facfe/preview.jpg /></a></div>
+![image](https://user-images.githubusercontent.com/116233849/206053943-92484428-a40b-415b-be7c-a3afd5673679.png)

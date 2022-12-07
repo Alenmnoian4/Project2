@@ -17,4 +17,4 @@
 
 ## MOCKUP
 
-<div src=https://s3.us-east-1.amazonaws.com/user-assets.mediamodifier.com/templates/638fd3ff4beafa613f88b11a/638fd44c26ca84b5473facfe/preview.jpg /></a></div>
+image.png

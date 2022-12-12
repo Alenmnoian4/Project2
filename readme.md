@@ -18,3 +18,6 @@
 ## MOCKUP
 
 image.png
+=======
+![image](https://user-images.githubusercontent.com/116233849/206053943-92484428-a40b-415b-be7c-a3afd5673679.png)
+>>>>>>> project2/main

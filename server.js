@@ -1,39 +1,38 @@
-require("dotenv").config()  // Load env variables
-const express = require('express') // bring in express to make our app
-const morgan = require('morgan') // nice logger for our request
-const methodOverride = require('method-override') // allows us to override post request from our ejs/forms
-const Mongoose = require('mongoose');
-const { default: mongoose } = require("mongoose");
+// Import
+require("dotenv").config();
+const express = require("express");
+const morgan = require("morgan");
+const methodOverride = require("method-override")
+const mongoose = require("mongoose")
+const vehicleRouter = require("./controllers/vehicle");
 
+// Creating application object
+const app = express();
 
-const app = express()
-
+mongoose.set('strictQuery', true)
 mongoose.connect(process.env.MONGO)
+mongoose.connection
 
+.on('open', () => console.log("Connected to Mongo"))
+.on('close', () => console.log("Disconnected from Mongo"))
+.on('error', () => console.log(error))
 
-//////////////////////////////////////////////
-//////// Middlewares
-///////////////////////////////////////////////
+// Middleware
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
+app.use(express.urlencoded({extended: true}));
+app.use("/static", express.static("public"))
+app.use("/Vehicle", vehicleRouter)
 
-app.use(morgan('tiny'))
-app.use(methodOverride('_method'))
-app.use(express.urlencoded({extended:true}))
-app.use(express.static('public'))
-app.use(session({
-    secret: process.env.SECRET,
-    store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
-    saveUninitialized: true,
-    resave: false,
-  }))
-
-// app.get('/', homeRoutes)
-// app.get('/store', storeRoutes)
-// app.get('/user', userRoutes)
-app.use('/fruits', FruitRouter)
-app.use("/user", UserRouter)
+// Routes
 
 app.get("/", (req, res) => {
-    res.render("index.ejs")
-  });
+    res.render('<h1>Server is Working/h1>')
+})
 
-app.listen(PORT, ()=> console.log(`Who let the dogs out on port: ${PORT}`))
+// App listener
+const PORT = process.env.PORT || 3000
+app.listen(PORT, (request, response) => {
+    console.log(`Listening on port: ${PORT}`)
+})
+

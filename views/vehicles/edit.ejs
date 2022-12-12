@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head.ejs") %> 
+
+<body>
+    <%- include("../partials/header.ejs") %> 
+    <main>
+        <div>
+            <form action="/vehicles/<%= vehicle._id %>?_method=PUT" method="post" >
+            
+                <fieldset>
+                    <legend>Edit a <%= vehicle.name %></legend>
+                    <label>
+                        COMPANY: <input 
+                            type="text"
+                            name="name"
+                            value="<%= vehicle.name %>"
+                            placeholder="enter a vehicle make"
+                        />
+                    </label>
+                    <label>
+                        MODEL: <input 
+                            type="text"
+                            name="name"
+                            value="<%= vehicle.model %>"
+                            placeholder="enter a vehicle model"
+                        />
+                    </label>
+                    <label>
+                        COLOR: <input 
+                            type="text"
+                            name="color"
+                            value="<%= vehicle.color %>"
+                            placeholder="enter a vehicle color"
+                        />
+                    </label>
+                    <label>
+                        HORSPOWER: <input 
+                            type="text"
+                            name="name"
+                            value="<%= vehicle.horsepower %>"
+                            placeholder="enter vehicle horsepower"
+                        />
+                    </label>
+                    <label>
+                        COST: <input 
+                            type="text"
+                            name="name"
+                            value="<%= vehicle.cost %>"
+                            placeholder="enter cost of vehicle"
+                        />
+                    </label>
+                    <label>
+                        IN STOCK: <input type="checkbox" name="inStock" <%= vehicle.inStock ? "checked" : "" %> />
+                    </label>
+                </fieldset>
+                <input type="submit" value="Update <%= vehicle.name%>" />
+            </form> 
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

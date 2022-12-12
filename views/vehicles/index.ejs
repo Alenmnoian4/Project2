@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+
+
+        <main>
+            <div>
+                <a href="/vehicles/new"><button>Build a new vehicle</button></a>
+                <a href="/user/logout"><button>Logout</button></a>
+                <h1>Logged in as <%=user %></h1>
+                <% for (vehicle of vehicles) { %>
+                    <article>
+                        <a href="/vehicles/<%= vehicle._id %>">
+                            <h2>
+                                <%= vehicle.name %> - <%= vehicle.inStock ? "Yes" : "No" %>
+                            </h2>
+                        </a>
+                    </article>
+                <% } %> 
+            </div>
+        </main>
+    </body>
+</html>

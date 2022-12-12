@@ -1,5 +1,5 @@
 //////////////////////////////////////////////
-//////// Fruits Model
+//////// Vehicles Model
 ///////////////////////////////////////////////
 const mongoose = require('./connection')
 
@@ -9,9 +9,12 @@ const { Schema, model } = mongoose // destructuring, grabbing model and Schema o
 
 
 const vehiclesSchema = new  Schema({
-    name: String,
+    company: String,
+    model: String,
     color: String,
-    readyToEat: Boolean,
+    horsepower: String,
+    cost: String,
+    inStock: Boolean,
     username: String,
 })
 

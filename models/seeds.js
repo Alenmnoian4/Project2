@@ -15,16 +15,11 @@ mongoose.connection.on('open', () => {
         { company: "Koenigsegg", model: "Agera RS" ,color: "red", horsepower: "1,160" ,cost: "$3,000,000" , inStock: true },
       ]
       
-      // Delete all fruits
+      // Delete all vehicles
       vehicle.deleteMany({}, (err, data) => {
-        // Create new fruits once old fruits are deleted
-        vehicle.create(startingVehicles, (err, data) =>{
-
+        vehicle.create(startingVehicles, (err, data) => {
             console.log(data)
-            
+            mongoose.connection.close()
         })
-
-      })
-      
+    })
 })
-

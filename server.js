@@ -9,7 +9,7 @@ const vehicleRouter = require("./controllers/vehicle");
 // Creating application object
 const app = express();
 
-mongoose.set('strictQuery', true)
+mongoose.set('strictQuery', false)
 mongoose.connect(process.env.MONGO)
 mongoose.connection
 
@@ -31,8 +31,8 @@ app.get("/", (req, res) => {
 })
 
 // App listener
-const PORT = process.env.PORT || 3000
-app.listen(PORT, (request, response) => {
+const PORT = process.env.PORT || 3004
+app.listen(PORT, (req, response) => {
     console.log(`Listening on port: ${PORT}`)
 })
 

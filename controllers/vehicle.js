@@ -25,11 +25,11 @@ router.use((req,res, next) => {
 
 router.get('/', (req, res) => {
     console.log(req.session)
-    // Get all fruits from mongo and send them back
-    // Fruit.find({})
+    // Get all vehicles from mongo and send them back
+    // vehicle.find({})
     vehicle.find({})
     .then((vehicles) => {
-        // res.json(fruits)
+        // res.json(vehicles)
         res.render('vehicles/index.ejs', { vehicles, user: req.session.username })
     })
     .catch(err => console.log(err))
@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
 //     readyToEat: 'on'
 // }
 
-    req.body.InStock = req.body.InStock === 'on' ? true : false
+    req.body.inStock = req.body.inStock === 'on' ? true : false
      //this is the  req.body after this line
     // {
 //     name: 'pear',

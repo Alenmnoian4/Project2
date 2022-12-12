@@ -1,23 +1,30 @@
-//////////////////////////////////////////////
-//////// Database Connections
-///////////////////////////////////////////////
-require("dotenv").config()  // Load env variables
-const mongoose = require('mongoose') // gives us that db connection and cool methods for CRUD to the datas
+/////////////////////////////////////////////
+// Import Our Dependencies
+/////////////////////////////////////////////
+require("dotenv").config() // Load ENV Variables
+const mongoose = require("mongoose") // gives us that db connection and cool methods for CRUD to the data
 
+/////////////////////////////////////////////
+// Database Connection
+/////////////////////////////////////////////
+// Setup inputs for our connect function
 const MONGO = process.env.MONGO
 const CONFIG = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
 }
 
-//Establish our connections
+// Establish Connection
 mongoose.connect(MONGO, CONFIG)
 
-// Log connections events from mongoose
+// Events for when connection opens/disconnects/errors
 mongoose.connection
-    .on("open", ()=> console.log('Mongoose connected'))
-    .on("close", ()=> console.log('Disconnected from Mongoose'))
-    .on("error", (error)=> console.log('Mongoose error', error))
+	.on("open", () => console.log("Connected to Mongoose"))
+	.on("close", () => console.log("Disconnected from Mongoose"))
+	.on("error", (error) => console.log(error))
 
-// export mongoose with connection to use in other files
+////////////////////////////////////////////////////
+// Export the Connection
+////////////////////////////////////////////////////
+
 module.exports = mongoose

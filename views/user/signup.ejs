@@ -4,10 +4,9 @@
 <body>
     <%- include("../partials/header.ejs") %>
 
-    <main class="parent">
-        <%- include("../partials/leftside.ejs") %> 
+    <main>
         <div>
-            <div class="navbar2">
+            <div>
                 <a href="/"><button>Home</button></a>
             </div>
             <form action="/user/signup" method="post">
@@ -23,7 +22,6 @@
             </fieldset>
         </form>
         </div>
-        <%- include("../partials/rightside.ejs") %> 
     </main>
 </body>
 </html>

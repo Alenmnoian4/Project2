@@ -1,7 +1,30 @@
 * {
     background-image: url("https://images2.alphacoders.com/118/1186747.jpg");
-    background-color: transparent;
-    color: #ddd;
+    background-color: black;
+    color: white;
     text-align: center;
     background-size:100%;
 }
+
+
+
+h1{
+   font-size: 500%; 
+   font-style: oblique;
+   
+   ;
+}
+
+body {
+    background-color: powderblue;
+  }
+  
+  h1{color: aquamarine
+    ;}
+  
+  h2,h3,h4 {
+    color: aquamarine;
+  }
+  p {
+    color: red;
+  }

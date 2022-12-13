@@ -3,16 +3,16 @@
 <%- include("../partials/head.ejs") %> 
 <body>
     <%- include("../partials/header.ejs") %>
-    <main class="parent">
+    <main>
         <div>
-        <div class="navbar2">
+        <div>
             <a href="/vehicle"><button>Home</button></a>
         </div>
         <form action="/vehicle" method="post">
         	<fieldset>
                 <label>
                     Company:
-                    <input type="text" name="company" placeholder="enter company brand" />
+                    <input type="text" name="company" placeholder="enter company" />
                 </label>
                 <br />
                 <label>
@@ -38,14 +38,14 @@
                     <input
                         type="text"
                         name="style"
-                        placeholder="enter sneaker style"
+                        placeholder="enter horsepower"
                     />
                 </label>
                 <br />
                 <label>
                     Cost:
                     <input
-                        type="textr"
+                        type="text"
                         name="cost"
                         placeholder="enter vehicle cost"
                     />

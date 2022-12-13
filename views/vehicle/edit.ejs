@@ -3,14 +3,16 @@
 <%- include("../partials/head.ejs") %> 
 <body>
     <%- include("../partials/header.ejs") %>
-    <main class="parent">
+    <main>
         <div>
-            <div class="navbar2">
+            <div>
                 <a href="/vehicle"><button>Home</button></a>
             </div>
         <form action="/vehicle/<%= vehicle._id %>?_method=PUT" method="post">
             <fieldset>
-                <legend>Edit a <%= vehicle.name %></legend>
+                <legend><%= vehicle.name %></legend>
+
+
                 <label>
                     Company: <input 
                         type="text"
@@ -55,7 +57,7 @@
                     In Stock: <input type="checkbox" name="inStock" <%= vehicle.inStock ? "checked" : "" %> />
                 </label>
             </fieldset>
-        <div class="create-new">
+        <div>
         <input type="submit" value="Update vehicle">
     </div>
         </form>

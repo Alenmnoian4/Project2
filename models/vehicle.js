@@ -1,14 +1,7 @@
-//////////////////////////////////////////////
-//////// Vehicles Model
-///////////////////////////////////////////////
-const mongoose = require('./connection')
+const mongoose = require("./connection")
+const {Schema, model} = mongoose
 
-const { Schema, model } = mongoose // destructuring, grabbing model and Schema off mongoose variable
-// mongoose.Schema
-// mongoose.model
-
-
-const vehiclesSchema = new  Schema({
+const vehiclesSchema = new Schema({
     company: String,
     model: String,
     color: String,
@@ -18,6 +11,6 @@ const vehiclesSchema = new  Schema({
     username: String
 })
 
-const Vehicle = model('Vehicle', vehiclesSchema)
+const Vehicle = model("Vehicle", vehiclesSchema)
 
 module.exports = Vehicle

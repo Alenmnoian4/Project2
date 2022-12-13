@@ -3,10 +3,10 @@
 <%- include("../partials/head.ejs") %> 
 <body>
     <%- include("../partials/header.ejs") %>
-    <main class="">
-       
+    <main class="parent">
+        <%- include("../partials/leftside.ejs") %> 
         <div>
-            <div class="">
+            <div class="navbar2">
                 <a href="/"><button>Home</button></a>
             </div>
             <form action="/user/login" method="post">
@@ -22,7 +22,7 @@
             </fieldset>
         </form>
         </div>
-     
+        <%- include("../partials/rightside.ejs") %> 
     </main>
 </body>
 </html>

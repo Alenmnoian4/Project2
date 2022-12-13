@@ -3,21 +3,20 @@
 <%- include("../partials/head.ejs") %> 
 <body>
     <%- include("../partials/header.ejs") %> 
-    <main class="">
-
+    <main class="parent">
         <div>
-            <div class="">
+            <div class="navbar2">
                 <a href="/vehicle/new"><button>Add a vehicle</button></a>
             </div>
             <% for (vehicle of vehicles) { %>
                 <a href="/vehicle/<%= vehicle._id %>">
                     <h2>
-                        <%= vehicle.company %> - <%= vehicle.inStock ? "In Stock" : "Out of stock" %>  
+                        <%= vehicle.company %> - <%= vehicle.inStock ? "Yes" : "No" %>  
                     </h2>
                 </a>
             <% } %> 
         </div>
-     
+        <%- include("../partials/footer.ejs") %> 
     </main>
 </body>
 </html>

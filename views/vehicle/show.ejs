@@ -4,13 +4,13 @@
 <body>
     <%- include("../partials/header.ejs") %>
 
-    <main class="">
- 
+    <main class="parent">
+        
         <div>
-            <div class="">
+            <div class="navbar2">
                 <a href="/vehicle"><button>Home</button></a>
             </div>
-            <h2><%= vehicle.company %> - <%= vehicle.inStock ? "In Stock" : "Out of stock" %></h2>
+            <h2><%= vehicle.name %> - <%= vehicle.inStock ? "Yes" : "No" %></h2>
             <h3>Model: <%= vehicle.model %></h3>
             <h3>Color: <%= vehicle.color %></h3>
             <h3>Horsepower: <%= vehicle.horsepower %></h3>
@@ -19,7 +19,6 @@
 
         </span>
         </div>
-    
         <footer>    
             <div class="show">
                 <a href="/vehicle/<%= vehicle._id %>/edit"><button>Edit</button></a>

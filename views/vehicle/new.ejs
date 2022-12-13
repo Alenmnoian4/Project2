@@ -3,40 +3,65 @@
 <%- include("../partials/head.ejs") %> 
 <body>
     <%- include("../partials/header.ejs") %>
-    <main class="">
-        
+    <main class="parent">
         <div>
-        <div class="">
+        <div class="navbar2">
             <a href="/vehicle"><button>Home</button></a>
         </div>
         <form action="/vehicle" method="post">
-        <fieldset>
-            <legend>Build a new vehicle</legend>
-            <label>
-                COMPANY: <input type="text" name="name" placeholder="enter a vehicle make " />
-            </label>
-            <label>
-                MODEL: <input type="text" name="name" placeholder="enter a vehicle model" />
-            </label>
-            <label>
-                COLOR: <input type="text" name="name" placeholder="enter a vehicle color" />
-            </label>
-            <label>
-                HORSEPOWER: <input type="text" name="name" placeholder="enter vehicle horsepower" />
-            </label>
-            <label>
-                COST: <input type="text" name="color" placeholder="enter cost of vehicle" />
-            </label>      
-            <label>
-                IN STOCK: <input type="checkbox" name="inStock" />
-            </label> 
-        </fieldset>
+        	<fieldset>
+                <label>
+                    Company:
+                    <input type="text" name="company" placeholder="enter company brand" />
+                </label>
+                <br />
+                <label>
+                    Model:
+                    <input
+                        type="text"
+                        name="model"
+                        placeholder="enter vehicle model"
+                    />
+                </label>
+                <br />
+                <label>
+                    Color:
+                    <input
+                        type="text"
+                        name="year"
+                        placeholder="enter vehicle color"
+                    />
+                </label>
+                <br />
+                <label>
+                    Horsepower:
+                    <input
+                        type="text"
+                        name="style"
+                        placeholder="enter sneaker style"
+                    />
+                </label>
+                <br />
+                <label>
+                    Cost:
+                    <input
+                        type="textr"
+                        name="cost"
+                        placeholder="enter vehicle cost"
+                    />
+                </label>
+                <br />
+                <label>
+                    In Stock: <input type="checkbox" name="inStock" />
+                </label>
+            </fieldset>
         <div class="create-new">
         <input type="submit" value="Create new vehicle">
         </div>
         </form>
+        <a href="/vehicle/"><button class="back">Back to Main</button></a>
         </div>
-       
+        <%- include("../partials/footer.ejs") %> 
     </main>
 </body>
 </html>

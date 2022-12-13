@@ -20,14 +20,14 @@ router.get("/", (req, res) => {
 
 // New
 router.get("/new", (req, res) => {
-    res.render("vehicle/new.ejs")
+    res.render("vehicle/new.ejs") 
 })
 
 // Delete
 router.delete("/:id", (req, res) => {
     const id = req.params.id
     Vehicle.findByIdAndRemove(id, (err, vehicle) => {
-        res.redirect("/vehicle")
+        res.redirect("/vehicle") 
     })
 })
 

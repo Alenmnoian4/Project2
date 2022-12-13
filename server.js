@@ -1,38 +1,31 @@
-// Import
-require("dotenv").config();
-const express = require("express");
-const morgan = require("morgan");
+require("dotenv").config()
+const express = require("express")
+const morgan = require("morgan")
 const methodOverride = require("method-override")
-const mongoose = require("mongoose")
-const vehicleRouter = require("./controllers/vehicle");
+const app = express()
+const PORT = process.env.PORT || 3004
+const VehicleRouter = require("./controllers/vehicle")
+const UserRouter = require("./controllers/user")
+const session = require("express-session")
+const MongoStore = require("connect-mongo")
 
-// Creating application object
-const app = express();
-
-mongoose.set('strictQuery', false)
-mongoose.connect(process.env.MONGO)
-mongoose.connection
-
-.on('open', () => console.log("Connected to Mongo"))
-.on('close', () => console.log("Disconnected from Mongo"))
-.on('error', () => console.log(error))
-
-// Middleware
-app.use(methodOverride("_method"));
-app.use(morgan("dev"));
-app.use(express.urlencoded({extended: true}));
-app.use("/static", express.static("public"))
-app.use("/Vehicle", vehicleRouter)
-
-// Routes
+app.use(morgan("dev"))
+app.use(methodOverride("_method"))
+app.use(express.urlencoded({extended: true}))
+app.use(express.static("public"))
+app.use(session({
+    secret: process.env.SECRET,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO }),
+    saveUninitialized: true,
+    resave: false
+}))
+app.use("/vehicle", VehicleRouter)
+app.use("/user", UserRouter)
 
 app.get("/", (req, res) => {
-    res.render('<h1>Server is Working/h1>')
+    res.render("indexx.ejs")
 })
 
-// App listener
-const PORT = process.env.PORT || 3004
-app.listen(PORT, (req, response) => {
-    console.log(`Listening on port: ${PORT}`)
+app.listen(PORT, () => {
+    console.log(`Fast and Furious: ${PORT}`)
 })
-

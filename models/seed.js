@@ -1,6 +1,6 @@
 require('dotenv').config()
 const mongoose = require('./connection')
-const vehicle = require('./vehicle')
+const Vehicle = require('./vehicle')
 
 
 mongoose.connection.on('open', () => {
@@ -16,8 +16,8 @@ mongoose.connection.on('open', () => {
       ]
       
       // Delete all vehicles
-      vehicle.deleteMany({}, (err, data) => {
-        vehicle.create(startingVehicles, (err, data) => {
+      Vehicle.deleteMany({}, (err, data) => {
+        Vehicle.create(startingVehicles, (err, data) => {
             console.log(data)
             mongoose.connection.close()
         })

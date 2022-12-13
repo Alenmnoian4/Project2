@@ -15,9 +15,9 @@ const vehiclesSchema = new  Schema({
     horsepower: String,
     cost: String,
     inStock: Boolean,
-    username: String,
+    username: String
 })
 
-const vehicle = model('vehicle', vehiclesSchema)
+const Vehicle = model('Vehicle', vehiclesSchema)
 
-module.exports = vehicle
+module.exports = Vehicle

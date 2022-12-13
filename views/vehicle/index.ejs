@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %> 
+<body>
+    <%- include("../partials/header.ejs") %> 
+    <main class="">
+
+        <div>
+            <div class="">
+                <a href="/vehicle/new"><button>Add a vehicle</button></a>
+            </div>
+            <% for (vehicle of vehicles) { %>
+                <a href="/vehicle/<%= vehicle._id %>">
+                    <h2>
+                        <%= vehicle.company %> - <%= vehicle.inStock ? "In Stock" : "Out of stock" %>  
+                    </h2>
+                </a>
+            <% } %> 
+        </div>
+     
+    </main>
+</body>
+</html>

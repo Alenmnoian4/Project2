@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head.ejs") %> 
-
+<%- include("../partials/head.ejs") %> 
 <body>
-    <%- include("../partials/header.ejs") %> 
-    <main>
+    <%- include("../partials/header.ejs") %>
+    <main class="">
+
         <div>
-            <form action="/vehicles/<%= vehicle._id %>?_method=PUT" method="post" >
+            <div class="">
+                <a href="/vehicle"><button>Home</button></a>
+            </div>
+        <form action="/vehicle/<%= vehicle._id %>?_method=PUT" method="post">
             
                 <fieldset>
                     <legend>Edit a <%= vehicle.name %></legend>
@@ -54,13 +57,12 @@
                         IN STOCK: <input type="checkbox" name="inStock" <%= vehicle.inStock ? "checked" : "" %> />
                     </label>
                 </fieldset>
-                <input type="submit" value="Update <%= vehicle.name%>" />
-            </form> 
-
-        </div>
-
-    </main>
-
-</body>
-
-</html>
+                <div class="create-new">
+                    <input type="submit" value="Update vehicle">
+                </div>
+                    </form>
+                    </div>
+                   
+                </main>
+            </body>
+            </html>
